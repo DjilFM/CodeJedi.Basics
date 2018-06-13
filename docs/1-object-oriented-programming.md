@@ -67,10 +67,10 @@ public struct Coordinates
 
 >#### Spécificités des structures
 >
-> * On ne peux pas définir un constructeur par défaut (sans paramètres) dans une `struct`.
-> * La valeur par défaut d'une `struct` ne peux pas ètre `null` contrairement à une `class`.
-> * Les membres d'une valeur par défaut d'une `struct` sont affécté en fonction de leur valeurs par défaut.
-> * Il n'exite pas d'héritage pour une `struct`.
+> * On ne peux pas définir un constructeur par défaut (sans paramètres) dans un `struct`.
+> * La valeur par défaut d'un `struct` ne peux pas ètre `null` contrairement à une `class`.
+> * Les membres d'une valeur par défaut d'un `struct` sont affécté en fonction de leur valeurs par défaut.
+> * Il n'exite pas d'héritage pour un `struct`.
 > * Un `struct` est de type valeur contrairement à `class` qui est de type référence.
 
 ### Membres
@@ -173,3 +173,11 @@ class TestClass
 ```
 
 Dans la plupart des cas, on déclare une méthode dans une classe. Toutefois, C# prend charge les [méthodes d’extension]( https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/extension-methods), qui permettent d’ajouter des méthodes à une classe existante hors de la définition réelle de la classe.
+
+#### Événements
+
+Les événements permettent à une classe ou un objet de notifier d'autres classes. La classe déclenche appelée `Publishers` et les classes qui gèrent l’événement sont appelées `Subscribers`. Pour plus d’informations sur les événements, leur déclenchement et leur gestion, consultez [Événements](https://docs.microsoft.com/fr-fr/dotnet/standard/events/index).
+
+#### Modificateurs d’accèssibilité
+
+Toute les classe ainsi que ces membres peuvent spécifier le niveau d'accés qu'ils fournissent, voici un tableau résumant les différents niveaux d'accés:
