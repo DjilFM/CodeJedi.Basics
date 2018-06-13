@@ -71,4 +71,89 @@ public struct Coordinates
 > * La valeur par défaut d'une `struct` ne peux pas ètre `null` contrairement à une `class`.
 > * Les membres d'une valeur par défaut d'une `struct` sont affécté en fonction de leur valeurs par défaut.
 > * Il n'exite pas d'héritage pour une `struct`.
-> * `struct` sont de type valeur contrairement à `class` qui est de type référence.
+> * Un `struct` est de type valeur contrairement à `class` qui est de type référence.
+
+### Membres
+
+Une `class` peut avoir plusieurs membres,ces membres permettent de définir le comportement de la classe.
+
+#### Champs
+
+Les champs sont similaires aux variables, car ils peuvent être lus ou définis directement.
+Exemple pour définir un champ:
+
+```c#
+class SampleClass  
+{  
+    private string _sampleField;  
+}  
+```
+
+En règle générale, vous devez utiliser des champs uniquement pour les variables dont l’accessibilité est **privée** ou **protégée**.
+
+#### Propriétés
+
+Une propriété est un membre qui fournit un mécanisme flexible pour la lecture, l'écriture ou le calcul de la valeur d'un champ privé.
+
+Exemple:
+
+```c#
+class SampleClass  
+{  
+    private string _sampleField;
+    public string SampleField
+    {
+        get
+        {
+            return _sampleField;
+        }
+        set
+        {
+            _sampleField = value;
+        }
+    }
+}  
+```
+
+C# vous permet d’utiliser des propriétés implémentées automatiquement.
+
+Exemple:
+
+```c#
+class SampleClass  
+{  
+    public string SampleField { get; set; }
+}  
+```
+
+Voici le IL Code correspendant:
+
+```c#
+internal class SampleClass
+{
+    private string _sampleField;
+
+    [CompilerGenerated]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private string <SampleField>k__BackingField;
+
+    public string SampleField
+    {
+        [CompilerGenerated]
+        get
+        {
+            return <SampleField>k__BackingField;
+        }
+        [CompilerGenerated]
+        set
+        {
+            <SampleField>k__BackingField = value;
+        }
+    }
+}
+
+```
+
+On remarque que le code IL généré pour cet exemple correspond à au premier exemple.
+
+>Comment j'ai eu le code IL : https://sharplab.io/
