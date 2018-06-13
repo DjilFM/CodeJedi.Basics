@@ -14,7 +14,7 @@ Les classes et structures sont deux des constructions de base en langage C#. Cha
 Les classes ont pour but de décrire un type d'objet, alors que l'objet est une instance de classe, c'est pour celà que la creation d'objet est appelé instance de classe.
 Si on veut faire l'anolgie de ce concept la classe sera un moule pour une pièce industruelle, et l'objet correspondra à la pièce crée à partir du moule :).
 
-Exemple:
+#### Exemple
 
 ```c#
 public class BankAccount
