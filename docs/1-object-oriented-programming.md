@@ -154,6 +154,22 @@ internal class SampleClass
 
 ```
 
-On remarque que le code IL généré pour cet exemple correspond à au premier exemple.
+On remarque que le code IL généré pour cet exemple correspond au premier exemple.
 
->Comment j'ai eu le code IL : https://sharplab.io/
+>Astuce pour avoir le code IL : <https://sharplab.io/>
+
+#### Méthodes
+
+Une méthode correspond à une action qu’un objet peut effectuer.
+
+```c#
+class TestClass  
+{  
+    public int TestMethod(string sampleParam)  
+    {  
+        // Insert code here  
+    }  
+}  
+```
+
+Dans la plupart des cas, on déclare une méthode dans une classe. Toutefois, C# prend charge les [méthodes d’extension]( https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/extension-methods), qui permettent d’ajouter des méthodes à une classe existante hors de la définition réelle de la classe.
