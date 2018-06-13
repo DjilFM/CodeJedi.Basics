@@ -12,9 +12,9 @@ Les classes et structures sont deux des constructions de base en langage C#. Cha
 ### Class
 
 Les classes ont pour but de décrire un type d'objet, alors que l'objet est une instance de classe, c'est pour celà que la creation d'objet est appelé instance de classe.
-Si on veut faire l'anolgie de ce concept la classe sera un moule pour une pièce industruelle, et l'objet correspondra à la pièce crée à partir du moule :).
+Si on veut faire l'anologie de ce concept la classe sera un moule pour une pièce industruelle, et l'objet correspondra à la pièce crée à partir du moule.
 
-#### Exemple
+#### Exemple 1
 
 ```c#
 public class BankAccount
@@ -34,13 +34,41 @@ public class BankAccount
         Balance = balance;
     }
     // Method.
-    public MakeDeposit(decimal ammount)
+    public MakeDeposit(decimal amount)
     {
-        Balance+=amount;
+        Balance += amount;
     }
     public MakeWithdrawal(decimal ammount)
     {
-        Balance-=amount;
+        Balance -= amount;
     }
 }
 ```
+
+### Struct
+
+Le type `struct` est approprié pour représenter des objets légers tels que Point, Rectangle et Couleur.
+Un `struct` peut être plus efficace dans certains scénarios. Par exemple, si on déclare un tableau de 100 objets `Coordinates`, vous devez allouer de la mémoire supplémentaire pour faire référence à chacun des objets. Dans ce cas, un struct est moins couteux.
+
+#### Exemple 2
+
+```c#
+public struct Coordinates
+{
+    public double Latitude { get; set; }
+    public double Longitude { get; }
+    public Coordinates(double latitude, double longitude)
+    {
+        Latitude = latitude;
+        Longitude = longitude;
+    }
+}
+```
+
+>#### Spécificités des structures
+>
+> * On ne peux pas définir un constructeur par défaut (sans paramètres) dans une `struct`.
+> * La valeur par défaut d'une `struct` ne peux pas ètre `null` contrairement à une `class`.
+> * Les membres d'une valeur par défaut d'une `struct` sont affécté en fonction de leur valeurs par défaut.
+> * Il n'exite pas d'héritage pour une `struct`.
+> * `struct` sont de type valeur contrairement à `class` qui est de type référence.
