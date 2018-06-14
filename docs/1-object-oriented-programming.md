@@ -55,7 +55,7 @@ Un `struct` peut être plus efficace dans certains scénarios. Par exemple, si o
 ```c#
 public struct Coordinates
 {
-    public double Latitude { get; set; }
+    public double Latitude { get; }
     public double Longitude { get; }
     public Coordinates(double latitude, double longitude)
     {
@@ -67,15 +67,15 @@ public struct Coordinates
 
 >#### Spécificités des structures
 >
-> * On ne peux pas définir un constructeur par défaut (sans paramètres) dans un `struct`.
+> * On ne peux pas redéfinir un constructeur par défaut (sans paramètres) dans un `struct`.
 > * La valeur par défaut d'un `struct` ne peux pas ètre `null` contrairement à une `class`.
-> * Les membres d'une valeur par défaut d'un `struct` sont affécté en fonction de leur valeurs par défaut.
+> * `default(Type)` et `new Type()` renvoient la valeur par défaut de la structure, où tous les champs ont leur valeur par défaut.
 > * Il n'exite pas d'héritage pour un `struct`.
 > * Un `struct` est de type valeur contrairement à `class` qui est de type référence.
 
 ### Membres
 
-Une `class` peut avoir plusieurs membres,ces membres permettent de définir le comportement de la classe.
+Une `class` peut avoir plusieurs membres, ces membres permettent de définir le comportement de la classe.
 
 #### Champs
 
@@ -100,16 +100,16 @@ Exemple:
 ```c#
 class SampleClass  
 {  
-    private string _sampleField;
-    public string SampleField
+    private string _sampleProperty;
+    public string SampleProperty
     {
         get
         {
-            return _sampleField;
+            return _sampleProperty;
         }
         set
         {
-            _sampleField = value;
+            _sampleProperty = value;
         }
     }
 }  
@@ -122,41 +122,41 @@ Exemple:
 ```c#
 class SampleClass  
 {  
-    public string SampleField { get; set; }
+    public string SampleProperty { get; set; }
 }  
 ```
 
-Voici le IL Code correspendant:
+Voici le code réel correspendant:
 
 ```c#
 internal class SampleClass
 {
-    private string _sampleField;
+    private string _sampleProperty;
 
     [CompilerGenerated]
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private string <SampleField>k__BackingField;
+    private string <SampleProperty>k__BackingField;
 
-    public string SampleField
+    public string SampleProperty
     {
         [CompilerGenerated]
         get
         {
-            return <SampleField>k__BackingField;
+            return <SampleProperty>k__BackingField;
         }
         [CompilerGenerated]
         set
         {
-            <SampleField>k__BackingField = value;
+            <SampleProperty>k__BackingField = value;
         }
     }
 }
 
 ```
 
-On remarque que le code IL généré pour cet exemple correspond au premier exemple.
+On remarque que le code réel généré pour cet exemple correspond au premier exemple.
 
->Astuce pour avoir le code IL : <https://sharplab.io/>
+>Astuce pour avoir le code réel : <https://sharplab.io/>
 
 #### Méthodes
 
