@@ -5,7 +5,7 @@
 Le langage c\# permet de couvrir tous les concepts de la programation orientée objet.
 Dans ce chapitre nous allons aborder tous ces concepts ainsi que les spécifictés du C\# 7.
 
-## Class et Structs
+## `Class` et `Struct`
 
 Les classes et structures sont deux des constructions de base en langage C#. Chacune est une structure de données qui encapsule un ensemble de données et de comportements . Les données et comportements forment les membres de la classe ou de la structure, cela inclue les méthodes, les propriétés, les champs, les évenement etc..
 
